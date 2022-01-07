@@ -1,0 +1,82 @@
+.menu-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0px;
+  height: 0px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  margin-top: 8vh;
+  margin-left: 3rem;
+}
+
+.menu-btn:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 18px;
+  height: 8px;
+  border: 2px solid rgb(0, 0, 0);
+  border-width: 3px 0 3px 0;
+  transform: rotate(0deg);
+  transition: transform 250ms ease-in-out;
+}
+
+.menu-btn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 18px;
+  height: 5px;
+  border: solid black;
+  border-width: 0 0 3px 0;
+  transform: rotate(0deg);
+  transition: transform 250ms ease-in-out;
+  top: 4.5px;
+  left: -9px;
+}
+
+.menu-btn:checked:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 18px;
+  height: 5px;
+  border: 2px solid rgb(145, 114, 114);
+  border-width: 3px 0 0 0;
+  transform: rotate(45deg);
+  transition: transform 250ms ease-in-out;
+  top: 1px;
+  left: -10px;
+}
+
+.menu-btn:checked:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 18px;
+  height: 5px;
+  border: 2px solid rgb(145, 114, 114);
+  border-width: 3px 0 0 0;
+  transform: rotate(-45deg);
+  transition: transform 250ms ease-in-out;
+  top: 1px;
+  left: -8px;
+}
+
+.slide {
+  opacity: 0;
+  transition-duration: 1000ms ease;
+}
+
+.slide.active{
+  opacity: 1;
+  transition-duration: 1000ms;
+  transform: scale(1.08)
+}
+
+
+.carousel-container{
+  width: 400%;
+}
