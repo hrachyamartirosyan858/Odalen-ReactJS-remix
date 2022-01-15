@@ -76,7 +76,27 @@
   transform: scale(1.08)
 }
 
-
 .carousel-container{
-  width: 400%;
+  height: 43vh;
+}
+
+.images-container{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
+  padding: 12px
+}
+
+.pointer{
+  background-color:rgb(219, 192, 192);
+  margin-top: 2vh;
+  width: 15px;
+  height: 15px;
+}
+
+.selected{
+  background-color: gray;
+}
+
+.selected:focus{
+  background-color: gray;
 }

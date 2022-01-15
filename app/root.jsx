@@ -15,6 +15,13 @@ import stylesUrl from "./styles/styles.css";
 import ImagesQuerySecond from "./components/ImagesQuery";
 import Carousel from "./components/Carousel";
 import CarouselItem from "./components/Carousel";
+import TopBar from "./components/TopBar";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons';
+
+library.add(fab, faCheckSquare, faCoffee)
+
 
 // https://remix.run/api/app#links
 
@@ -118,6 +125,7 @@ function Layout({ children }) {
     <div className="remix-app">
       <header className="remix-app__header">
         <div className="container remix-app__header-content">
+          <TopBar bgColor="bg-black" iconsColor="white"  />
           <TopMenu />
           <Carousel/>
           {/* <ImagesQuerySecond /> */}
