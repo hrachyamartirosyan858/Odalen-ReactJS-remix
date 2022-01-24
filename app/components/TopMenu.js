@@ -6,7 +6,7 @@ export default function TopMenu() {
   const [isChecked, setIsChecked] = useState(false);
 
   return (
-    <div>
+    <div style={{ height: "28vh" }}>
       <MenuButtonBurger
         isChecked={isChecked}
         onChange={(e) => {

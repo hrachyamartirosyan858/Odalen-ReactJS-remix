@@ -1,5 +1,5 @@
 import { imagesData } from "./Data";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 
 const carousel = [imagesData[0], imagesData[1], imagesData[2], imagesData[3]];
@@ -20,8 +20,8 @@ export default function Carousel() {
   };
 
   useEffect(() => {
-    let imageChangeId = null
-    if(mouseOn){
+    let imageChangeId = null;
+    if (mouseOn) {
       imageChangeId = setInterval(nextImage, 10000);
     }
     return () => {
@@ -30,9 +30,9 @@ export default function Carousel() {
   }, [imagesIndex, translateX, mouseOn]);
 
   return (
-    <div className=" overflow-hidden">
+    <div className="overflow-hidden">
       <div
-        className="carousel-container flex flex-row overflow-hidden duration-1000 ease-in-out"
+        className="h-1/3 flex flex-row overflow-hidden duration-1000 ease-in-out"
         style={{
           transform: `translateX(-${translateX}%)`,
           width: `${imagesCount * 100}%`,
@@ -41,7 +41,15 @@ export default function Carousel() {
         {carousel.map((item) => {
           return (
             <div className="images-container">
-              <img onMouseOver={() => {setMouseOn(false)}} onMouseLeave={() => {setMouseOn(true)}} src={item.url} />
+              <img
+                onMouseOver={() => {
+                  setMouseOn(false);
+                }}
+                onMouseLeave={() => {
+                  setMouseOn(true);
+                }}
+                src={item.url}
+              />
             </div>
           );
         })}
@@ -61,7 +69,7 @@ export default function Carousel() {
           );
         })}
       </div>
-      <button onClick={nextImage}>Next</button>
+      {/* <button onClick={nextImage}>Next</button> */}
     </div>
   );
 }
