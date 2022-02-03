@@ -1,4 +1,4 @@
-import { imagesData } from "./Data";
+import { imagesData } from "../data";
 import { useState, useEffect } from "react";
 import React from "react";
 

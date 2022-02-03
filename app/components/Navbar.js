@@ -2,7 +2,7 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
-import { topMenuData } from "./Data";
+import { topMenuData } from "../data";
 
 const navigation = topMenuData;
 
@@ -143,7 +143,7 @@ export default function Navbar() {
           </div>
 
           <Disclosure.Panel className="sm:hidden">
-          {/* <--- */}
+            {/* <--- */}
             <Transition
               as={Fragment}
               enter="transition ease-out duration-100"

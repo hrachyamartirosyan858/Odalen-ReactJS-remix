@@ -10,21 +10,23 @@ import {
 } from "remix";
 
 import tailwindUrl from "./styles/tailwind.css";
-import TopMenu from "./components/TopMenu";
+// import TopMenu from "./components/TopMenu";
 import stylesUrl from "./styles/styles.css";
 // import ImagesQuerySecond from "./components/ImagesQuery";
-import Carousel from "./components/Carousel";
+// import Carousel from "./components/Carousel";
 // import CarouselItem from "./components/Carousel";
 import TopBar from "./components/TopBar";
-import AboutUs from "./components/AboutUs";
-import MakeOrder from "./components/MakeOrder";
-import GoogleMap from "./components/GoogleMap";
+// import AboutUs from "./components/AboutUs";
+// import MakeOrder from "./components/MakeOrder";
+// import GoogleMap from "./components/GoogleMap";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { faCheckSquare, faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { faCheckSquare, faCoffee , fas} from "@fortawesome/free-solid-svg-icons";
 import Navbar from "./components/Navbar";
 
-library.add(fab, faCheckSquare, faCoffee);
+
+
+library.add(fab, fas, faCheckSquare, faCoffee);
 
 // https://remix.run/api/app#links
 
@@ -129,7 +131,7 @@ function Layout({ children }) {
       <header className="remix-app__header z-50">
         <div className="container remix-app__header-content">
           <TopBar bgColor="bg-gray-800" iconsColor="white" />
-
+   
           <nav aria-label="Main navigation" className="remix-app__header-nav">
             {/* <TopMenu /> */}
             <Navbar />
@@ -151,9 +153,8 @@ function Layout({ children }) {
         <div className="container remix-app__main-content">{children}</div>
       </div>
       <footer className="remix-app__footer">
-        <GoogleMap />
+      
         <TopBar bgColor="bg-white" iconsColor="black" />
-
         <div className="container remix-app__footer-content">
           {/* <p>&copy; You!</p> */}
         </div>

@@ -2,6 +2,7 @@ import { useLoaderData, json, Link } from "remix";
 import AboutUs from "~/components/AboutUs";
 import Carousel from "~/components/Carousel";
 import MakeOrder from "~/components/MakeOrder";
+import GoogleMap from "~/components/GoogleMap";
 
 // Loaders provide data to components and are only ever called on the server, so
 // you can connect to a database or run any server side code you want right next
@@ -61,6 +62,7 @@ export default function Index() {
         <Carousel />
         <MakeOrder />
         <AboutUs />
+        <GoogleMap />
       </main>
       {/* <aside>
         <h2>Demos In This App</h2>

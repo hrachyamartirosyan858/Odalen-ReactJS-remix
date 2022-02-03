@@ -1,4 +1,4 @@
-import { topMenuData } from "./Data";
+import { topMenuData } from "../data";
 import { Link } from "remix";
 
 export default function Header({ isChecked }) {
