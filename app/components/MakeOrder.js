@@ -1,5 +1,4 @@
 import { Link } from "remix";
-import RestaurantMenuPrices from "~/routes/prices"
 
 export default function MakeOrder() {
   return (
@@ -12,16 +11,20 @@ export default function MakeOrder() {
           className="border-solid border-2 border-indigo-600 border-slate-400 rounded w-48"
         />
           </Link>
+       <Link to="/estimate">   
         <input
           type="button"
           value="Ստանալ նախահաշիվ"
           className="border-solid border-2 border-indigo-600 border-slate-400 rounded w-48"
         />
+        </Link>
+        <Link to="/reserve">
         <input
           type="button"
           value="Ամրագրել սեղան"
           className="border-solid border-2 border-indigo-600 border-slate-400 rounded w-48"
         />
+        </Link>
       </div>
     </div>
   );

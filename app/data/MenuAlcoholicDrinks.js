@@ -1,4 +1,5 @@
-[
+export const loader = async() =>{ 
+  return [
   {
     "url": "images/beer.png",
     "name": "Գարեջուր",
@@ -15,3 +16,4 @@
     "price": 8000
   }
 ]
+}
