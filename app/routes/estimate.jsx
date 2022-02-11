@@ -4,60 +4,47 @@ import makeAnimated from "react-select/animated";
 import InputMask from "react-input-mask";
 import { Button } from "@mui/material";
 
-const animatedComponents = makeAnimated();
-
-const today = new Date().toDateString();
-
-const customerNumOptions = [
-  { value: 7, label: 7 },
-  { value: 13, label: 13 },
-  { value: 19, label: 19 },
-  { value: 25, label: 25 },
-  { value: 31, label: 31 },
-  { value: 37, label: 37 },
-  { value: 43, label: 43 },
-  { value: 49, label: 49 },
-  { value: 55, label: 55 },
-  { value: 61, label: 61 },
-  { value: 67, label: 67 },
-  { value: 73, label: 73 },
-  { value: 80, label: 80 },
-];
-
-const hotDishOptions = [
-  { value: "խորոված", label: "Խորոված" },
-  { value: "ճուտ", label: "Ճուտ" },
-  { value: "քյուֆտա", label: "Քյուֆտա" },
-];
-
-const saladOptions = [
-  { value: "ցարսկայա", label: "Ցարսկայա" },
-  { value: "ամբսոլյուտ", label: "Աբսոլյուտ" },
-  { value: "ամառային", label: "Ամարային" },
-];
-
-const drinkOptions = [
-  { value: "կեսար", label: "Կեսար" },
-  { value: "մայրաքաղաքային", label: "Մայրաքաղաքային" },
-  { value: "օհանյան", label: "Օհանյան" },
-];
-
-function showValue(e) {
-  console.log(e.target.value);
-}
-
 export default function GetEstimate() {
-  //   const [telValue, setTelValue] = useState();
 
-  //   const handleTelValue = (e) => {
-  //     if (e.target.value.length === 4) {
-  //       setTelValue(e.target.value + ") ");
-  //     } else if (e.target.value.length === 8) {
-  //       setTelValue(e.target.value + "-");
-  //     } else if (e.target.value.length === 11) {
-  //       setTelValue(e.target.value + "-");
-  //     } else setTelValue(e.target.value);
-  //   };
+  const animatedComponents = makeAnimated();
+
+  const customerNumOptions = [
+    { value: 7, label: 7 },
+    { value: 13, label: 13 },
+    { value: 19, label: 19 },
+    { value: 25, label: 25 },
+    { value: 31, label: 31 },
+    { value: 37, label: 37 },
+    { value: 43, label: 43 },
+    { value: 49, label: 49 },
+    { value: 55, label: 55 },
+    { value: 61, label: 61 },
+    { value: 67, label: 67 },
+    { value: 73, label: 73 },
+    { value: 80, label: 80 },
+  ];
+  
+  const hotDishOptions = [
+    { value: "խորոված", label: "Խորոված" },
+    { value: "ճուտ", label: "Ճուտ" },
+    { value: "քյուֆտա", label: "Քյուֆտա" },
+  ];
+  
+  const saladOptions = [
+    { value: "ցարսկայա", label: "Ցարսկայա" },
+    { value: "ամբսոլյուտ", label: "Աբսոլյուտ" },
+    { value: "ամառային", label: "Ամարային" },
+  ];
+  
+  const drinkOptions = [
+    { value: "կեսար", label: "Կեսար" },
+    { value: "մայրաքաղաքային", label: "Մայրաքաղաքային" },
+    { value: "օհանյան", label: "Օհանյան" },
+  ];
+  
+  function showValue(e) {
+    console.log(e.target.value);
+  }
 
   return (
     <>
@@ -111,7 +98,6 @@ export default function GetEstimate() {
           className="border-2 border-slate-300 rounded pl-3 mb-6"
           placeholder="✆: +374 (__) __-__-__"
           //   alwaysShowMask
-          onChange={showValue}
         />
 
         <input

@@ -1,16 +1,22 @@
 [
   {
     "url": "images/Odalen_Axcan_1.png",
+    "urlAvif": "images/Odalen_Axcan_1.avif",
+    "urlWebP": "images/Odalen_Axcan_1.webp",
     "name": "Ռեպետե",
     "price": 1800
   },
   {
     "url": "images/Odalen_Axcan_3.png",
+    "urlAvif": "images/Odalen_Axcan_3.avif",
+    "urlWebP": "images/Odalen_Axcan_3.webp",
     "name": "Հավով, ընկույզով",
     "price": 1700
   },
   {
     "url": "images/Odalen_Axcan_Amarayin.png",
+    "urlAvif": "images/Odalen_Axcan_Amarayin.avif",
+    "urlWebP": "images/Odalen_Axcan_Amarayin.webp",
     "name": "Ամառային",
     "price": 1600
   }

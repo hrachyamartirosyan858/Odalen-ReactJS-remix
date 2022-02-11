@@ -3,15 +3,15 @@ import { Form } from "remix";
 import { useLoaderData } from "remix";
 import drink from "~/data/MenuAlcoholicDrinks.json";
 
-// export const loader = async () => {
-//   return drink;
-// };
+export const loader = async () => {
+  return drink;
+};
 
 export default function Reserve() {
   const date = new Date();
   const maxDate = date.setDate(date.getDate() + 7);
-  const zibil = useLoaderData()
-  console.log(zibil)
+  const alcoholicDrinks = useLoaderData()
+  console.log(alcoholicDrinks)
   return (
     <Form className="border-2 flex flex-col">
       <div className="mt-4">

@@ -1,16 +1,22 @@
 [
     {
       "url": "images/Odalen_Naxutest_Panri_Tesakani.png",
+      "urlAvif": "images/Odalen_Naxutest_Panri_Tesakani.avif",
+      "urlWebP": "images/Odalen_Naxutest_Panri_Tesakani.webp",
       "name": "Պանրի տեսականի",
       "price": 2200
     },
     {
       "url": "images/Odalen_Naxutest_Msi_Tesakani.png",
+      "urlAvif": "images/Odalen_Naxutest_Msi_Tesakani.avif",
+      "urlWebP": "images/Odalen_Naxutest_Msi_Tesakani.webp",
       "name": "Մսի տեսականի",
       "price": 2400
     },
     {
       "url": "images/Odalen_Naxutest_Ttu.png",
+      "urlAvif": "images/Odalen_Naxutest_Ttu.avif",
+      "urlWebP": "images/Odalen_Naxutest_Ttu.webp",
       "name": "Տնական թթու",
       "price": 1600
     }

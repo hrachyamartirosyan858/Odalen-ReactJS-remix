@@ -1,16 +1,22 @@
 [
   {
     "url": "images/beer.png",
+    "urlAvif": "images/beer.avif",
+    "urlWebP": "images/beer.webp",
     "name": "Գարեջուր",
     "price": 500
   },
   {
     "url": "images/wine_glass.jpg",
+    "urlAvif": "images/wine_glass.avif",
+    "urlWebP": "images/wine_glass.webp",
     "name": "Գինի",
     "price": 4000
   },
   {
     "url": "images/absolut-vodka.jpg",
+    "urlAvif": "images/absolut-vodka.avif",
+    "urlWebP": "images/absolut-vodka.webp",
     "name": "Օղի",
     "price": 8000
   }

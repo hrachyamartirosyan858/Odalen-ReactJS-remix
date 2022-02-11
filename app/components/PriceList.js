@@ -16,11 +16,14 @@ export default function PriceList({ title, children }) {
         }}
       >
         <span className="">
-          <FontAwesomeIcon
+          {/* <FontAwesomeIcon
             icon={["fas", "angle-right"]}
             size="1x"
             className={`mr-2 duration-300 ${isChecked && "rotate-90"}`}
-          />
+          /> */}
+          <span className={`mr-2 duration-300 ${isChecked && "rotate-90"}`}>
+            {">"}
+          </span>
           {title}
         </span>
       </span>

@@ -1,16 +1,22 @@
 [
   {
     "url": "images/Odalen_Utest_Garan_Tiak.png",
+    "urlAvif": "images/Odalen_Utest_Garan_Tiak.avif",
+    "urlWebP": "images/Odalen_Utest_Garan_Tiak.webp",
     "name": "Գառան թիակ",
     "price": 7200
   },
   {
     "url": "images/Odalen_Utest_Beefstroganov.png",
+    "urlAvif": "images/Odalen_Utest_Beefstroganov.avif",
+    "urlWebP": "images/Odalen_Utest_Beefstroganov.webp",
     "name": "Բիֆստրոգանով",
     "price": 1800
   },
   {
     "url": "images/Odalen_Utest_Eskalop.png",
+    "urlAvif": "images/Odalen_Utest_Eskalop.avif",
+    "urlWebP": "images/Odalen_Utest_Eskalop.webp",
     "name": "Էսկալոպ",
     "price": 2800
   }
