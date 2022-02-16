@@ -1,0 +1,27 @@
+[
+  {
+    "text": "Գլխավոր",
+    "href": "/",
+    "current": true
+  },
+  {
+    "text": "Ամրագրել սեղան",
+    "href": "/reserve",
+    "current": false
+  },
+  {
+    "text": "Ստանալ նախահաշիվ",
+    "href": "/estimateB",
+    "current": false
+  },
+  {
+    "text": "Ճաշացանկ",
+    "href": "/prices",
+    "current": false
+  },
+  {
+    "text": "Ակցիաներ",
+    "href": "#",
+    "current": false
+  }
+]

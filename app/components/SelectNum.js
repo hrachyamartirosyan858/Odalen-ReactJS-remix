@@ -14,21 +14,19 @@ export default function BasicSelect({options, label}) {
 
   return (
     <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">{label}</InputLabel>
+      <FormControl fullWidth >
+        <InputLabel id="demo-simple-select-label" >{label}</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={num}
           label={label}
           onChange={handleChange}
+          required
         >
           {options.map((item) => {
             return <MenuItem value={item.value}>{item.option}</MenuItem>;
           })}
-          {/* <MenuItem value={10}>10</MenuItem>
-          <MenuItem value={20}>20</MenuItem>
-          <MenuItem value={30}>30</MenuItem> */}
         </Select>
       </FormControl>
     </Box>

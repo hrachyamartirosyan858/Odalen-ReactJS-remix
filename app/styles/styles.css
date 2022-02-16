@@ -100,3 +100,12 @@
 .selected:focus{
   background-color: gray;
 }
+
+.input-mask{
+  border-color: #C4C4C4;
+}
+
+.input-mask:focus{
+  outline-color:#1372D1;
+}
+

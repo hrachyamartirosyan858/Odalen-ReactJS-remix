@@ -1,42 +1,5 @@
 let nextId = 0;
 
-export const topMenuData = [
-  {
-    id: nextId++,
-    text: "Գլխավոր",
-    href: "#",
-    current: true,
-  },
-  // {
-  //   id: nextId++,
-  //   text: "Պատվիրել առցանց",
-  // },
-  {
-    id: nextId++,
-    text: "Ամրագրել սեղան",
-    href: "#",
-    current: false,
-  },
-  {
-    id: nextId++,
-    text: "Ստանալ նախահաշիվ",
-    href: "#",
-    current: false,
-  },
-  {
-    id: nextId++,
-    text: "Ճաշացանկ",
-    href: "#",
-    current: false,
-  },
-  {
-    id: nextId++,
-    text: "Ակցիաներ",
-    href: "#",
-    current: false,
-  },
-];
-
 export const imagesData = [
   {
     id: nextId++,

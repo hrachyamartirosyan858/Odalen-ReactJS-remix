@@ -1,14 +1,31 @@
-import { imagesData } from "../data";
-import { useState, useEffect } from "react";
 import React from "react";
+import { useState, useEffect } from "react";
+import { useLoaderData } from "remix";
+import { imagesData } from "../data";
+import imgData from "~/data/ImagesData.json";
 
-const carousel = [imagesData[0], imagesData[1], imagesData[2], imagesData[3]];
+export async function loader(){
+  return [
+   imgData[0],
+   imgData[1],
+   imgData[2],
+   imgData[3],
+  ];
+};
+
+// console.log(loader())
+
+// const carousel = [imagesData[0], imagesData[1], imagesData[2], imagesData[3]];
 
 export default function Carousel() {
+  const carousel = useLoaderData();
+//   const car = useLoaderData();
   const [translateX, setTranslateX] = useState(0);
   const [imagesIndex, setImagesIndex] = useState(0);
   const [mouseOn, setMouseOn] = useState(true);
   const imagesCount = carousel.length;
+
+//   console.log(car)
 
   const nextImage = () => {
     setTranslateX(

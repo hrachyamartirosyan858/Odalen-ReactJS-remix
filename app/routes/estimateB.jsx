@@ -1,9 +1,17 @@
 import { Form } from "remix";
+import { useState } from "react";
 import SelectNum from "~/components/SelectNum";
 import SelectMultiple from "~/components/SelectMultiple";
 import SelectBasic from "~/components/SelectBasic";
+import TextField from "~/components/TextField";
+import Contacts from "~/components/ClientContacts";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
+import InputMask from "react-input-mask";
 
 export default function GetEstimateB() {
+  const [buttonVerson, setButtonVerson] = useState("outlined");
+
   const customerNumOptions = [
     { value: 7, option: 7 },
     { value: 13, option: 13 },
@@ -31,13 +39,12 @@ export default function GetEstimateB() {
     { value: "կեսար", label: "Կեսար" },
     { value: "մայրաքաղաքային", label: "Մայրաքաղաքային" },
   ];
-  
+
   const drinkOptions = [
     { value: "ցարսկայա", label: "Ցարսկայա" },
     { value: "ամբսոլյուտ", label: "Աբսոլյուտ" },
     { value: "օհանյան", label: "Օհանյան" },
   ];
-  
 
   return (
     <>
@@ -47,19 +54,34 @@ export default function GetEstimateB() {
         լրացնելով դատարկ վանդակները և ուղարկելով մեզ:
       </div>
       <Form className="flex flex-col" method="post" reloadDocument>
-        <SelectNum
-          options={customerNumOptions}
-          label="Մասնակիցների քանակ"
-          required
-        />
-        <div className="mt-3">
-          <SelectMultiple options={hotDishOptions} label="Տաք ուտեստ" />
+        <div className="m-3 p-2 border">
+          <SelectNum
+            options={customerNumOptions}
+            label="Մասնակիցների քանակ"
+            required
+          />
+          <div className="mt-3">
+            <SelectMultiple options={hotDishOptions} label="Տաք ուտեստ"/>
+          </div>
+          <div className="mt-3">
+            <SelectBasic options={saladOptions} label="Աղցան" />
+          </div>
+          <div className="mt-3">
+            <SelectBasic options={drinkOptions} label="Խմիչք" />
+          </div>
         </div>
-        <div className="mt-3">
-          <SelectBasic options={saladOptions} label="Աղցան"/>
-        </div>
-        <div className="mt-3">
-          <SelectBasic options={drinkOptions} label="Խմիչք"/>
+        <Contacts />
+        <div className="flex flex-row justify-center p-5">
+          <Stack spacing={2} sx={{ maxWidth: 130 }}>
+            <Button
+              onMouseOver={() => setButtonVerson("contained")}
+              onMouseLeave={() => setButtonVerson("outlined")}
+              variant={buttonVerson}
+              type="submit"
+            >
+              ՀԱՍՏԱՏԵԼ
+            </Button>
+          </Stack>
         </div>
       </Form>
     </>

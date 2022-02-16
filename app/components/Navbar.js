@@ -1,19 +1,19 @@
-/* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from "react";
+import { useLoaderData } from "remix";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
-import { topMenuData } from "../data";
+// import { topMenuData } from "../data";
+import topMenuData from "~/data/TopMenuData.json"
 
-const navigation = topMenuData;
-
-// topMenuData.map((data) => {
-//   return ({name: data.text, href: "#" , current: data.current})
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Navbar() {
+
+const navigation = topMenuData;
+
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -47,9 +47,9 @@ export default function Navbar() {
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
+                    {navigation.map((item, index) => (
                       <a
-                        key={item.id}
+                        key={index}
                         href={item.href}
                         className={classNames(
                           item.current
@@ -154,9 +154,9 @@ export default function Navbar() {
               leaveTo="transform opacity-0 scale-95"
             >
               <div className="px-2 pt-2 pb-3 space-y-1">
-                {navigation.map((item) => (
+                {navigation.map((item, index) => (
                   <Disclosure.Button
-                    key={item.id}
+                    key={index}
                     as="a"
                     href={item.href}
                     className={classNames(
