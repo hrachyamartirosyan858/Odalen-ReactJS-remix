@@ -3,16 +3,14 @@ import { useLoaderData } from "remix";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 // import { topMenuData } from "../data";
-import topMenuData from "~/data/TopMenuData.json"
-
+import topMenuData from "~/data/TopMenuData.json";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Navbar() {
-
-const navigation = topMenuData;
+  const navigation = topMenuData;
 
   return (
     <Disclosure as="nav" className="bg-gray-800">
@@ -34,11 +32,21 @@ const navigation = topMenuData;
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                  <img
+                  <picture className="block lg:hidden h-8 w-auto">
+                    <source srcset="images/Odalen_logo.avif" type="image/avif" />
+                    <source srcset="images/Odalen_logo.webp" type="image/webp" />
+                    <img
+                      width="40px"
+                      height="auto"
+                      src="images/Odalen_logo.jpg"
+                      alt="Odalen logo"
+                    />
+                  </picture>
+                  {/* <img
                     className="block lg:hidden h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                    src="images/Odalen_logo.jpg"
                     alt="Workflow"
-                  />
+                  /> */}
                   <img
                     className="hidden lg:block h-8 w-auto"
                     src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"

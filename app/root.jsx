@@ -16,6 +16,7 @@ import stylesUrl from "./styles/styles.css";
 // import Carousel from "./components/Carousel";
 // import CarouselItem from "./components/Carousel";
 import TopBar from "./components/TopBar";
+import BottomBar from "./components/BottomBar"
 // import AboutUs from "./components/AboutUs";
 // import MakeOrder from "./components/MakeOrder";
 // import GoogleMap from "./components/GoogleMap";
@@ -23,7 +24,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { faCheckSquare, faCoffee , fas} from "@fortawesome/free-solid-svg-icons";
 import Navbar from "./components/Navbar";
-
+// import NavList from "./components/NavLink"
 
 
 library.add(fab, fas, faCheckSquare, faCoffee);
@@ -135,6 +136,7 @@ function Layout({ children }) {
           <nav aria-label="Main navigation" className="remix-app__header-nav">
             {/* <TopMenu /> */}
             <Navbar />
+            {/* <NavList /> */}
             {/* <ul>
               <li>
                 <Link to="/">Home</Link>
@@ -154,7 +156,7 @@ function Layout({ children }) {
       </div>
       <footer className="remix-app__footer">
       
-        <TopBar bgColor="bg-white" iconsColor="black" />
+        <BottomBar bgColor="bg-white" iconsColor="black" />
         <div className="container remix-app__footer-content">
           {/* <p>&copy; You!</p> */}
         </div>

@@ -5,8 +5,9 @@ import SelectMultiple from "~/components/SelectMultiple";
 import SelectBasic from "~/components/SelectBasic";
 import TextField from "~/components/TextField";
 import Contacts from "~/components/ClientContacts";
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
+import ButtonSubmit from "~/components/ButtonMUI";
+// import Stack from "@mui/material/Stack";
+// import Button from "@mui/material/Button";
 import InputMask from "react-input-mask";
 
 export default function GetEstimateB() {
@@ -49,7 +50,7 @@ export default function GetEstimateB() {
   return (
     <>
       <h1 className="text-center">ՍՏԱՆԱԼ ՆԱԽԱՀԱՇԻՎ</h1>
-      <div className="text-justify my-3">
+      <div className="text-justify my-3 px-4">
         Միջոցառու՞մ եք պլանավորում: Իմացեք նախօրոք Ձեր միջոցառման արժեքը՝
         լրացնելով դատարկ վանդակները և ուղարկելով մեզ:
       </div>
@@ -71,18 +72,10 @@ export default function GetEstimateB() {
           </div>
         </div>
         <Contacts />
-        <div className="flex flex-row justify-center p-5">
-          <Stack spacing={2} sx={{ maxWidth: 130 }}>
-            <Button
-              onMouseOver={() => setButtonVerson("contained")}
-              onMouseLeave={() => setButtonVerson("outlined")}
-              variant={buttonVerson}
-              type="submit"
-            >
-              ՀԱՍՏԱՏԵԼ
-            </Button>
-          </Stack>
+        <div className="m-3 p-2 border h-32">
+          <TextField />
         </div>
+        <ButtonSubmit value="ՀԱՍՏԱՏԵԼ" type="submit"/>
       </Form>
     </>
   );

@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function TopBar({ bgColor, iconsColor }) {
-
   return (
     <div>
       <div
@@ -9,22 +8,25 @@ export default function TopBar({ bgColor, iconsColor }) {
       >
         <div style={{ color: `${iconsColor}` }}>Հետևեք մեզ</div>
         <a href="https://www.facebook.com/odalen.restaurant">
-          <FontAwesomeIcon
+          <img src="facebook-logo-white.svg" width="18px"/>
+          {/* <FontAwesomeIcon
             icon={["fab", "facebook-f"]}
             size="1x"
             className="p-5.5"
             color={iconsColor}
-          />
+          /> */}
         </a>
         <a href="https://www.instagram.com/odale_restaurant">
-          <FontAwesomeIcon
+          <img src="instagram-logo-white.svg" width="20px"/>
+          {/* <FontAwesomeIcon
             icon={["fab", "instagram"]}
             size="1x"
             color={iconsColor}
-          />
+          /> */}
         </a>
         <a href="https://g.page/odalenarmenia?share">
-          <svg
+        <img src="tripadvisor-logo-white.svg" width="20px"/>
+          {/* <svg
             className="w-5"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 64 64"
@@ -55,7 +57,7 @@ export default function TopBar({ bgColor, iconsColor }) {
               d="M15.724 32.153a2.677 2.677 0 0 1 2.7 2.619 2.763 2.763 0 0 1-2.7 2.72 2.67 2.67 0 1 1 0-5.339z"
               fill={iconsColor}
             ></path>
-          </svg>
+          </svg> */}
         </a>
       </div>
       <div

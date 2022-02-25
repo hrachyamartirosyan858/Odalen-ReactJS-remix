@@ -1,27 +1,56 @@
-// import {useLoaderData} from 'remix';
+// import { redirect, json, Form, useActionData } from "remix";
 
-// export async function loader(){
-//     return[
-//         {
-//             name: "Hrachya",
-//             surname: "Martirosyan",
-//             age: 35 
-//         }
-//     ]
+// export async function action({ request }) {
+//   const form = await request.formData();
+//   const email = form.get("email");
+//   const password = form.get("password");
+//   const errors = {};
+
+//   // validate the fields
+//   if (typeof email !== "string" || !email.includes("@")) {
+//     errors.email =
+//       "That doesn't look like an email address";
+//   }
+
+//   if (typeof password !== "string" || password.length < 6) {
+//     errors.password = "Password must be > 6 characters";
+//   }
+
+//   // return data if we have errors
+//   if (Object.keys(errors).length) {
+//     return json(errors, { status: 422 });
+//   }
+
+//   // otherwise create the user and redirect
+//   await createUser(form);
+//   return redirect("/dashboard");
 // }
 
-// export default function Info (){
-//     const peopleInfo = useLoaderData();
-//     console.log(peopleInfo)
-//     return (
-//         <div>
-//             {peopleInfo.map((item) => {
-//                 return (
-//                     <div>{item.name}{" "}{item.surname}{", age-"}{item.age}</div>
-//                 )
-//             })}
-//         </div>
-//     )
+// export default function Signup() {
+//   const errors = useActionData();
+
+//   return (
+//     <>
+//       <h1>Signup</h1>
+//       <Form method="post">
+//         <p>
+//           <input type="text" name="email" style={{border: "solid black"}}/>
+//           {errors?.email ? (
+//             <span>{errors.email}</span>
+//           ) : null}
+//         </p>
+//         <p>
+//           <input type="text" name="password" style={{border: "solid black"}}/>
+//           {errors?.password ? (
+//             <span>{errors.password}</span>
+//           ) : null}
+//         </p>
+//         <p>
+//           <button type="submit">Sign up</button>
+//         </p>
+//       </Form>
+//     </>
+//   );
 // }
 
 // import { withZod } from "@remix-validated-form/with-zod";

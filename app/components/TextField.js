@@ -1,26 +1,28 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import FormControl from "@mui/material/FormControl";
 
 export default function FormPropsTextFields() {
   return (
     <Box
       component="form"
       sx={{
-        "& .MuiTextField-root": { m: 1, width: "25ch" },
+        "& .MuiTextField-root": { minWidth: 120 },
       }}
       noValidate
       autoComplete="off"
     >
-      <div>
+      <FormControl fullWidth>
         <TextField
-          required
+        sx={{ textOverflow: 'ellipsis' ,  height: 300 }}
           id="outlined-required"
-          label="Required"
+          label="Նշումներ"
           defaultValue=""
+        
         />
 
-      </div>
+      </FormControl>
     </Box>
   );
 }

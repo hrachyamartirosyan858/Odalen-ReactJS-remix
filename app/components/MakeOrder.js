@@ -1,29 +1,18 @@
 import { Link } from "remix";
+import ButtonSubmit from "~/components/ButtonMUI";
 
-export default function MakeOrder() {
+export default function MakeOrder({prices, estimate, reserve}) {
   return (
-    <div className="flex items-center justify-center my-8">
+    <div className="flex items-center justify-center mb-8 w-full">
       <div className="flex items-center justify-center flex-col">
-      <Link to="/prices" >
-        <input
-          type="button"
-          value="Ճաշացանկ"
-          className="border-solid border-2 border-indigo-600 border-slate-400 rounded w-48"
-        />
-          </Link>
-       <Link to="/estimate">   
-        <input
-          type="button"
-          value="Ստանալ նախահաշիվ"
-          className="border-solid border-2 border-indigo-600 border-slate-400 rounded w-48"
-        />
+        <Link to={prices}>
+          <ButtonSubmit type="button" value="Ճաշացանկ" />
         </Link>
-        <Link to="/reserve">
-        <input
-          type="button"
-          value="Ամրագրել սեղան"
-          className="border-solid border-2 border-indigo-600 border-slate-400 rounded w-48"
-        />
+        <Link to={estimate}>
+          <ButtonSubmit type="button" value="Ստանալ նախահաշիվ" />
+        </Link>
+        <Link to={reserve}>
+          <ButtonSubmit type="button" value="Ամրագրել սեղան" />
         </Link>
       </div>
     </div>
