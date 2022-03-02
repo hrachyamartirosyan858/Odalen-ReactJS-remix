@@ -11,7 +11,7 @@ export function NumAnim({ translateY, duration }) {
   ];
 
   return (
-    <div className="overflow-hidden h-9 w-6">
+    <div className="overflow-hidden h-9 w-6 my-4 border">
       <div
         className="flex flex-col ease-[cubic-bezier(.04,.1,0,1.05)] items-center"
         style={{
@@ -31,9 +31,11 @@ export function NumAnim({ translateY, duration }) {
   );
 }
 
-export default function GrowingNumbers() {
+export default function GrowingNumbers({ num }) {
   const [isCounting, setIsCounting] = useState(false);
   const targetRef = useRef(null);
+  const stopIndex = 70;
+  const ArrOfNUm = num.toString().split("");
 
   const callbackFunction = (entries) => {
     const [entry] = entries; // const entry = entries[0];
@@ -43,7 +45,7 @@ export default function GrowingNumbers() {
   const options = {
     root: null,
     rootMargin: "0px",
-    threshold: 0.7,
+    threshold: 0.5,
   };
 
   useEffect(() => {
@@ -57,17 +59,15 @@ export default function GrowingNumbers() {
   }, [targetRef, options]);
 
   return (
-    <>
-      <h1 className="mb-96">Tittle</h1>
-      <h1 className="mb-96">Tittle2</h1>
-      <div className="flex flex-row" ref={targetRef}>
-        <NumAnim translateY={isCounting ? 94 : 0} duration="1500" />
-        <NumAnim translateY={isCounting ? 92 : 0} duration="1600"/>
-        <NumAnim translateY={isCounting ? 95 : 0} duration="1700"/>
-        <NumAnim translateY={isCounting ? 98 : 0} duration="1800"/>
-        <NumAnim translateY={isCounting ? 97 : 0} duration="1900"/>
-        <NumAnim translateY={isCounting ? 99 : 0} duration="2000"/>
-      </div>
-    </>
+    <div className="flex flex-row" ref={targetRef}>
+      {ArrOfNUm.map((item, index) => {
+        return (
+          <NumAnim
+            translateY={isCounting ? stopIndex + parseInt(item) : 0}
+            duration={isCounting ? index * 100 + 2000 : 0}
+          />
+        );
+      })}
+    </div>
   );
 }

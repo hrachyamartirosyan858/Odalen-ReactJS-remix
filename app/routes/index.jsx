@@ -7,7 +7,9 @@ import imgData from "~/data/ImagesData.json";
 import Card from "~/components/Card";
 import CardDavtashen from "~/components/CardRestaurant";
 import CardCenter from "~/components/CardCenter";
-import Bounty from "react-bounty";
+import NumberSpiner from "~/components/NumberSpiner";
+import InterestingInfo from "~/components/InterestingInfo"
+
 
 // Loaders provide data to components and are only ever called on the server, so
 // you can connect to a database or run any server side code you want right next
@@ -34,7 +36,7 @@ export default function Index() {
     <div className="remix__page">
       <main className="flex flex-col items-center">
         <Carousel carouselData={data} />
-        <div className="mt-4">Here must be News</div>
+        <AboutUs />
         <div className="mt-4">
           <div className="mb-6">
             <CardDavtashen />
@@ -43,13 +45,8 @@ export default function Index() {
             <CardCenter />
           </div>
         </div>
-        <AboutUs />
+        <InterestingInfo />
         <GoogleMap />
-        <div className="flex flex-row mt-4">
-          <Bounty value={456} style={{ width: "20rem" }} />
-          <span className="pr-2"></span>
-          <Bounty value={134} />
-        </div>
       </main>
       {/* <aside>
         <h2>Demos In This App</h2>

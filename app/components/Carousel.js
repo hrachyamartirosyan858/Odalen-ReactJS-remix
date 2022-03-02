@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useLoaderData } from "remix";
 import { imagesData } from "../data";
 
-export default function Carousel({carouselData}) {
+export default function Carousel({ carouselData }) {
   const carousel = carouselData;
   const [translateX, setTranslateX] = useState(0);
   const [imagesIndex, setImagesIndex] = useState(0);

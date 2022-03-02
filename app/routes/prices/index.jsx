@@ -37,7 +37,7 @@ export const loader = async () => {
 export default function RestaurantMenuPrices() {
   const menuPrices = useLoaderData();
 
-  // console.log(menuPrices)
+  console.log(JSON.stringify(menuPrices));
 
   return (
     <>

@@ -15,13 +15,11 @@ export default function FormPropsTextFields() {
     >
       <FormControl fullWidth>
         <TextField
-        sx={{ textOverflow: 'ellipsis' ,  height: 300 }}
+          sx={{ textOverflow: "ellipsis", height: 300 }}
           id="outlined-required"
           label="Նշումներ"
           defaultValue=""
-        
         />
-
       </FormControl>
     </Box>
   );

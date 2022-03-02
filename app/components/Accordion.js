@@ -25,9 +25,14 @@ export default function SimpleAccordion({ title, children }) {
                   key={index}
                 >
                   <picture className="p-4 w-2/3">
-                    <source srcset={item.urlAvif} type="image/avif" />
-                    <source srcset={item.urlWebP} type="image/webp" />
-                    <img width="100%" height="auto" src={item.url} alt="" />
+                    <source srcSet={item.urlAvif} type="image/avif" />
+                    <source srcSet={item.urlWebP} type="image/webp" />
+                    <img
+                      width="100%"
+                      height="auto"
+                      src={item.url}
+                      alt=""
+                    />
                   </picture>
                   <div className="flex flex-col">
                     <div>{item.name}</div>

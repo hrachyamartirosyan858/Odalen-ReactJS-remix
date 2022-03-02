@@ -48,6 +48,7 @@ export default function RecipeReviewCard() {
         //   </IconButton>
         // }
         title="Օդալեն Ռեստորան"
+        titleTypographyProps={{fontWeight: "bold", fontSize: 18}}
         // subheader="September 14, 2016"
       />
       <CardMedia
@@ -56,13 +57,13 @@ export default function RecipeReviewCard() {
         image="images/ardzan-2.jpg"
         alt="Paella dish"
       />
-      <CardContent>
+      <CardContent sx={{ pb: 0 }}>
         <Typography variant="body2" color="text.secondary">
           Այստեղ պետք է մի նախադասություն լինի, որը կբնութագրի նկարում նշված
           օբյեկտի ինքնությունը
         </Typography>
       </CardContent>
-      <CardActions disableSpacing>
+      <CardActions sx={{ pb: 0.5 }} disableSpacing>
         <IconButton aria-label="add to favorites">
           {/* <FavoriteIcon /> */}
           <div className="flex flex-row items-center justify-center space-x-4">
@@ -72,7 +73,7 @@ export default function RecipeReviewCard() {
             <a href="https://www.instagram.com/odale_restaurant">
               <img src="instagram-logo-gray.svg" width="20px" />
             </a>
-            <a href="https://g.page/odalenarmenia?share">
+            <a className="pl-1" href="https://g.page/odalenarmenia?share">
               <img src="tripadvisor-logo-gray.svg" width="20px" />
             </a>
           </div>

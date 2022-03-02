@@ -8,6 +8,7 @@ export default function ButtonSubmit({ value, type }) {
     <div className="flex flex-row justify-center p-2">
       <Stack spacing={2} sx={{ minWidth: 300 }}>
         <Button
+          sx={{ fontWeight: "bold", fontSize: 18 }}
           onMouseOver={() => setButtonVerson("contained")}
           onMouseLeave={() => setButtonVerson("outlined")}
           variant={buttonVerson}
