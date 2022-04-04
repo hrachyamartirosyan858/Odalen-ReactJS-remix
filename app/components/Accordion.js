@@ -27,12 +27,7 @@ export default function SimpleAccordion({ title, children }) {
                   <picture className="p-4 w-2/3">
                     <source srcSet={item.urlAvif} type="image/avif" />
                     <source srcSet={item.urlWebP} type="image/webp" />
-                    <img
-                      width="100%"
-                      height="auto"
-                      src={item.url}
-                      alt=""
-                    />
+                    <img width="100%" height="auto" src={item.url} alt="" />
                   </picture>
                   <div className="flex flex-col">
                     <div>{item.name}</div>
@@ -44,30 +39,6 @@ export default function SimpleAccordion({ title, children }) {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      {/* <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-        >
-          <Typography>Accordion 2</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion> */}
-      {/* <Accordion disabled>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel3a-content"
-          id="panel3a-header"
-        >
-          <Typography>Disabled Accordion</Typography>
-        </AccordionSummary>
-      </Accordion> */}
     </div>
   );
 }

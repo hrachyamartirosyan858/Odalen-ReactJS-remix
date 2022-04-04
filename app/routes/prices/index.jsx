@@ -37,15 +37,17 @@ export const loader = async () => {
 export default function RestaurantMenuPrices() {
   const menuPrices = useLoaderData();
 
-  console.log(JSON.stringify(menuPrices));
+  // console.log(JSON.stringify(menuPrices));
 
   return (
     <>
       <Link to="/prices/id">
         <ButtonChangeRoute value="Անցնել Օդալեն Կենտրոնի ճաշացանկ" />
       </Link>
-      {menuPrices.map((item) => {
-        return <Accordion title={item.title} children={item.source} />;
+      {menuPrices.map((item, index) => {
+        return (
+          <Accordion key={index} title={item.title} children={item.source} />
+        );
       })}
     </>
   );

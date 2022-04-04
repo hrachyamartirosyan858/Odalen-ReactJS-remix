@@ -16,16 +16,19 @@ import stylesUrl from "./styles/styles.css";
 // import Carousel from "./components/Carousel";
 // import CarouselItem from "./components/Carousel";
 import TopBar from "./components/TopBar";
-import BottomBar from "./components/BottomBar"
+import BottomBar from "./components/BottomBar";
 // import AboutUs from "./components/AboutUs";
 // import MakeOrder from "./components/MakeOrder";
 // import GoogleMap from "./components/GoogleMap";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { faCheckSquare, faCoffee , fas} from "@fortawesome/free-solid-svg-icons";
+import {
+  faCheckSquare,
+  faCoffee,
+  fas,
+} from "@fortawesome/free-solid-svg-icons";
 import Navbar from "./components/Navbar";
 // import NavList from "./components/NavLink"
-
 
 library.add(fab, fas, faCheckSquare, faCoffee);
 
@@ -131,8 +134,8 @@ function Layout({ children }) {
     <div className="remix-app">
       <header className="remix-app__header z-50">
         <div className="container remix-app__header-content">
-          <TopBar bgColor="bg-gray-800" iconsColor="white" />
-   
+          <TopBar bgColor="bg-[#612E01]" iconsColor="white" />
+
           <nav aria-label="Main navigation" className="remix-app__header-nav">
             {/* <TopMenu /> */}
             <Navbar />
@@ -155,7 +158,6 @@ function Layout({ children }) {
         <div className="container remix-app__main-content">{children}</div>
       </div>
       <footer className="remix-app__footer">
-      
         <BottomBar bgColor="bg-white" iconsColor="black" />
         <div className="container remix-app__footer-content">
           {/* <p>&copy; You!</p> */}

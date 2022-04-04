@@ -1,73 +1,96 @@
-import AnimatedNumber from "animated-number-react";
-import { useState, useEffect, useRef } from "react";
-import Bounty from "react-bounty";
+import { useLoaderData, Link } from "remix";
+import { useState } from "react";
+import * as React from "react";
+import Chip from "@mui/material/Chip";
+import Button from "@mui/material/Button";
+import Stack from "@mui/material/Stack";
+// import PriceList from "~/components/PriceList";
+import Salads from "~/data/MenuSalad.json";
+import Starters from "~/data/MenuStarters.json";
+import MainDishes from "~/data/MenuMainDishes.json";
+import Barbecue from "~/data/MenuBarbecue.json";
+// import Assorted from "~/data/MenuAssorted.json";
+// import BeerSnack from "~/data/MenuBeerSnack.json";
+// import NonAlcoholicDrinks from "~/data/MenuNonAlcoholicDrinks.json";
+import AlcoholicDrinks from "~/data/MenuAlcoholicDrinks.json";
+// import TheRest from "~/data/MenuTheRest.json";
+import ButtonChangeRoute from "~/components/ButtonMUI";
+import MenuPriceList from "~/components/MenuPriceList";
 
-export function NumAnim({ translateY, duration }) {
-  const numArr = [
-    0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4,
-    5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
-    0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4,
-    5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+export const loader = async () => {
+  return [
+    { title: "ՀԻՄՆԱԿԱՆ ՈՒՏԵՍՏՆԵՐ", source: MainDishes },
+    { title: "ՄԱՆՂԱԼ", source: Barbecue },
+    { title: "ՆԱԽՈՒՏԵՍՏՆԵՐ", source: Starters },
+    { title: "ԱՂՑԱՆՆԵՐ", source: Salads },
+    { title: "ԱԼԿՈՀՈԼԱՅԻՆ ԸՄՊԵԼԻՔՆԵՐ", source: AlcoholicDrinks },
   ];
+};
 
+// const menuList = [
+//   "ՀԻՄՆԱԿԱՆ ՈՒՏԵՍՏՆԵՐ",
+//   "ՄԱՆՂԱԼ",
+//   "ԱՍՈՐՏԻ",
+//   "ՆԱԽՈՒՏԵՍՏՆԵՐ",
+//   "ԱՂՑԱՆՆԵՐ",
+//   "ԳԱՐԵՋՐԻ ԽՈՐՏԻԿՆԵՐ",
+//   "ՈՉ ԱԼԿՈՀՈԼԱՅԻՆ ԸՄՊԵԼԻՔՆԵՐ",
+//   "ԱԼԿՈՀՈԼԱՅԻՆ ԸՄՊԵԼԻՔՆԵՐ",
+//   "ԱՅԼ",
+// ];
+
+export default function RestaurantMenuPrices() {
+  const menuPrices = useLoaderData();
+  const arrIsdisabled = menuPrices.map(() => false);
+
+  // console.log(arrIsdisabled);
+
+  const [visible, setVisible] = useState(true);
+  const [menu, setMenu] = useState(menuPrices);
+  const [isDisabled, setIsdisabled] = useState(arrIsdisabled);
+
+  function handleMenu(e) {
+    setVisible(false);
+    setTimeout(() => {
+      setMenu(menuPrices.filter((item) => item.title === e.target.value));
+      setVisible(true);
+    }, 500);
+    setIsdisabled(
+      menuPrices.map((element) => element.title === e.target.value)
+    );
+  }
+  console.log(typeof isDisabled[0]);
   return (
-    <div className="overflow-hidden h-9 w-6">
-      <div
-        className="flex flex-col ease-[cubic-bezier(.04,.1,0,1.05)] items-center"
-        style={{
-          transform: `translateY(-${translateY}%)`,
-          transitionDuration: `${duration}ms`,
-        }}
-      >
-        {numArr.map((item, index) => {
+    <>
+      <Link to="/prices/id">
+        <ButtonChangeRoute value="Անցնել Օդալեն Կենտրոնի ճաշացանկ" />
+      </Link>
+      <div className="flex flex-col">
+        {menuPrices.map((item, index) => {
           return (
-            <div key={index} className="h-9 text-2xl">
-              {item}
-            </div>
+            <input
+              type="button"
+              onClick={handleMenu}
+              value={item.title}
+              key={index}
+              disabled={isDisabled[index]}
+            />
           );
         })}
       </div>
-    </div>
-  );
-}
 
-export default function GrowingNumbers() {
-  const [isCounting, setIsCounting] = useState(false);
-  const targetRef = useRef(null);
-
-  const callbackFunction = (entries) => {
-    const [entry] = entries; // const entry = entries[0];
-    setIsCounting(entry.isIntersecting);
-  };
-
-  const options = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.7,
-  };
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(callbackFunction, options);
-    const currentTarget = targetRef.current;
-    if (currentTarget) observer.observe(currentTarget);
-
-    return () => {
-      if (currentTarget) observer.unobserve(currentTarget);
-    };
-  }, [targetRef, options]);
-
-  return (
-    <>
-      <h1 className="mb-96">Tittle</h1>
-      <h1 className="mb-96">Tittle2</h1>
-      <div className="flex flex-row" ref={targetRef}>
-        <NumAnim translateY={isCounting ? 94 : 0} duration="1500" />
-        <NumAnim translateY={isCounting ? 92 : 0} duration="1600"/>
-        <NumAnim translateY={isCounting ? 95 : 0} duration="1700"/>
-        <NumAnim translateY={isCounting ? 98 : 0} duration="1800"/>
-        <NumAnim translateY={isCounting ? 97 : 0} duration="1900"/>
-        <NumAnim translateY={isCounting ? 99 : 0} duration="2000"/>
-      </div>
+      {menu.map((item, index) => {
+        return (
+          <>
+            <div>{item.title}</div>
+            <MenuPriceList
+              children={item.source}
+              visible={visible}
+              key={index}
+            />
+          </>
+        );
+      })}
     </>
   );
 }

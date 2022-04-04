@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SimpleDialogDemo from "~/components/DialogSimpleMUI";
 
 export default function TopBar({ bgColor, iconsColor }) {
   return (
@@ -7,15 +8,10 @@ export default function TopBar({ bgColor, iconsColor }) {
         className={`${bgColor} flex flex-row items-center justify-center space-x-4`}
       >
         <div style={{ color: `${iconsColor}` }}>Հետևեք մեզ</div>
-        <a href="https://www.facebook.com/odalen.restaurant">
+        <SimpleDialogDemo iconSrc="facebook-logo.svg" />
+        {/* <a href="https://www.facebook.com/odalen.restaurant">
           <img src="facebook-logo.svg" width="18px" />
-          {/* <FontAwesomeIcon
-            icon={["fab", "facebook-f"]}
-            size="1x"
-            className="p-5.5"
-            color={iconsColor}
-          /> */}
-        </a>
+        </a> */}
         <a href="https://www.instagram.com/odale_restaurant">
           <img src="instagram-logo.svg" width="20px" />
           {/* <FontAwesomeIcon

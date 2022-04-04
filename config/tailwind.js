@@ -18,6 +18,9 @@ module.exports = {
       transitionTimingFunction: {
         cubic: "cubic-bezier(.04,.1,0,1.05)",
       },
+      color: {
+        "regal-brown": "#612E01",
+      },
     },
   }, // customize the theme however you want here
   variants: {}, // activate any variant you want here

@@ -1,6 +1,4 @@
-import AnimatedNumber from "animated-number-react";
 import { useState, useEffect, useRef } from "react";
-import Bounty from "react-bounty";
 
 export function NumAnim({ translateY, duration }) {
   const numArr = [

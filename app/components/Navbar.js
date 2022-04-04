@@ -1,19 +1,46 @@
-import { Fragment } from "react";
+import { useState, Fragment } from "react";
 import { useLoaderData } from "remix";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 // import { topMenuData } from "../data";
 import topMenuData from "~/data/TopMenuData.json";
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+import { NavLink } from "remix";
 
 export default function Navbar() {
-  const navigation = topMenuData;
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(" ");
+  }
+
+  const [navigation, setNavigation] = useState([
+    {
+      text: "Գլխավոր",
+      href: "/",
+      current: true,
+    },
+    {
+      text: "Ամրագրել սեղան",
+      href: "/reserve",
+      current: false,
+    },
+    {
+      text: "Ստանալ նախահաշիվ",
+      href: "/estimateB",
+      current: false,
+    },
+    {
+      text: "Ճաշացանկ",
+      href: "/prices",
+      current: false,
+    },
+    {
+      text: "Ակցիաներ",
+      href: "/estimateC",
+      current: false,
+    },
+  ]);
 
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-[#612E01] border-t">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -32,66 +59,67 @@ export default function Navbar() {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                  <picture className="block lg:hidden h-8 w-auto">
-                    <source srcset="images/Odalen_logo.avif" type="image/avif" />
-                    <source srcset="images/Odalen_logo.webp" type="image/webp" />
-                    <img
-                      width="40px"
-                      height="auto"
-                      src="images/Odalen_logo.jpg"
-                      alt="Odalen logo"
-                    />
-                  </picture>
+                  <img
+                    className="block lg:hidden h-8 w-auto"
+                    width="40px"
+                    height="auto"
+                    src="Odalen_logo.png"
+                    alt="Odalen logo"
+                  />
+
                   {/* <img
                     className="block lg:hidden h-8 w-auto"
-                    src="images/Odalen_logo.jpg"
-                    alt="Workflow"
+                    src="Odalen_logo.png"
+                    alt="Odalen logo"
                   /> */}
                   <img
                     className="hidden lg:block h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                    alt="Workflow"
+                    src="Odalen_logo.png"
+                    alt="Odalen logo"
                   />
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
                     {navigation.map((item, index) => (
-                      <a
+                      <NavLink
                         key={index}
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? "bg-gray-900 text-white"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                          "px-3 py-2 rounded-md text-sm font-medium"
-                        )}
-                        aria-current={item.current ? "page" : undefined}
+                        to={item.href}
+                        className={({ isActive }) =>
+                          `${
+                            isActive
+                              ? "bg-gray-900 text-white"
+                              : "text-gray-300 hover:bg-gray-700 hover:text-white"
+                          } px-3 py-2 rounded-md text-sm font-medium`
+                        }
+                        aria-current={({ isActive }) =>
+                          isActive ? "page" : undefined
+                        }
                       >
                         {item.text}
-                      </a>
+                      </NavLink>
                     ))}
                   </div>
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button
+                {/* <button
                   type="button"
                   className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                 >
                   <span className="sr-only">View notifications</span>
-                  {/* <BellIcon className="h-6 w-6" aria-hidden="true" /> */}
-                </button>
+                  <BellIcon className="h-6 w-6" aria-hidden="true" />
+                </button> */}
 
                 {/* Profile dropdown */}
-                <Menu as="div" className="ml-3 relative">
+                {/* <Menu as="div" className="ml-3 relative">
                   <div>
                     <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                       <span className="sr-only">Open user menu</span>
-                      {/* <img
+                      <img
                         className="h-8 w-8 rounded-full"
                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                         alt=""
-                      /> */}
+                      />
                     </Menu.Button>
                   </div>
                   <Transition
@@ -145,14 +173,14 @@ export default function Navbar() {
                       </Menu.Item>
                     </Menu.Items>
                   </Transition>
-                </Menu>
+                </Menu> */}
               </div>
             </div>
           </div>
 
           <Disclosure.Panel className="sm:hidden">
             {/* <--- */}
-            <Transition
+            {/* <Transition
               as={Fragment}
               enter="transition ease-out duration-100"
               enterFrom="transform opacity-0 scale-95"
@@ -179,7 +207,7 @@ export default function Navbar() {
                   </Disclosure.Button>
                 ))}
               </div>
-            </Transition>
+            </Transition> */}
           </Disclosure.Panel>
         </>
       )}

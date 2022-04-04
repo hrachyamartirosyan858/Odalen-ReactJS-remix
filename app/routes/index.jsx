@@ -8,8 +8,7 @@ import Card from "~/components/Card";
 import CardDavtashen from "~/components/CardRestaurant";
 import CardCenter from "~/components/CardCenter";
 import NumberSpiner from "~/components/NumberSpiner";
-import InterestingInfo from "~/components/InterestingInfo"
-
+import InterestingInfo from "~/components/InterestingInfo";
 
 // Loaders provide data to components and are only ever called on the server, so
 // you can connect to a database or run any server side code you want right next
