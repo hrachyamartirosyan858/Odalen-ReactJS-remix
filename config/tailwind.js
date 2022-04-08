@@ -21,6 +21,12 @@ module.exports = {
       color: {
         "regal-brown": "#612E01",
       },
+      dropShadow: {
+        "3xl": "0 35px 35px rgba(0, 0, 0, 0.25)",
+      },
+      boxShadow: {
+        "3xl": "0 5px 1px rgba(0, 0, 0, 0.25)",
+      },
     },
   }, // customize the theme however you want here
   variants: {}, // activate any variant you want here

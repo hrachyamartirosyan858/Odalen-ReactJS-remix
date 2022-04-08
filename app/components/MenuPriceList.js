@@ -1,7 +1,6 @@
 export default function MenuPriceList({ children, visible }) {
   return (
     <div
-      // style={{ transitionProperty: "all", transitionDuration: "10000ms" }}
       className={`h-full 
         ${
           visible
@@ -16,7 +15,7 @@ export default function MenuPriceList({ children, visible }) {
             className="flex flex-row items-center justify-start border-b-2"
             key={index}
           >
-            <picture className="p-4 w-2/3">
+            <picture className="p-4 min-w-fit h-24">
               <source srcSet={item.urlAvif} type="image/avif" />
               <source srcSet={item.urlWebP} type="image/webp" />
               <img width="100%" height="auto" src={item.url} alt="" />

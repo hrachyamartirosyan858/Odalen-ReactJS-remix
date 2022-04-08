@@ -5,22 +5,24 @@ import FormControl from "@mui/material/FormControl";
 
 export default function FormPropsTextFields() {
   return (
-    <Box
-      component="form"
-      sx={{
-        "& .MuiTextField-root": { minWidth: 120 },
-      }}
-      noValidate
-      autoComplete="off"
-    >
-      <FormControl fullWidth>
-        <TextField
-          sx={{ textOverflow: "ellipsis", height: 300 }}
-          id="outlined-required"
-          label="Նշումներ"
-          defaultValue=""
-        />
-      </FormControl>
-    </Box>
+    // <Box
+    //   component="form"
+    //   sx={{
+    //     "& .MuiTextField-root": { minWidth: 120 },
+    //   }}
+    //   noValidate
+    //   autoComplete="off"
+    // >
+    <FormControl fullWidth>
+      <TextField
+        sx={{ textOverflow: "ellipsis" }}
+        multiline
+        rows={4}
+        id="outlined-required"
+        label="Նշումներ"
+        defaultValue=""
+      />
+    </FormControl>
+    // </Box>
   );
 }

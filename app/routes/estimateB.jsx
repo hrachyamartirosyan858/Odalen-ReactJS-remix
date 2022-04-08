@@ -62,7 +62,7 @@ export default function GetEstimateB() {
             required
           />
           <div className="mt-3">
-            <SelectMultiple options={hotDishOptions} label="Տաք ուտեստ"/>
+            <SelectMultiple options={hotDishOptions} label="Տաք ուտեստ" />
           </div>
           <div className="mt-3">
             <SelectBasic options={saladOptions} label="Աղցան" />
@@ -72,10 +72,10 @@ export default function GetEstimateB() {
           </div>
         </div>
         <Contacts />
-        <div className="m-3 p-2 border h-32">
+        <div className="m-3 p-2 border h-36">
           <TextField />
         </div>
-        <ButtonSubmit value="ՀԱՍՏԱՏԵԼ" type="submit"/>
+        <ButtonSubmit value="ՀԱՍՏԱՏԵԼ" type="submit" />
       </Form>
     </>
   );

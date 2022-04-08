@@ -16,6 +16,7 @@ import AlcoholicDrinks from "~/data/MenuAlcoholicDrinks.json";
 // import TheRest from "~/data/MenuTheRest.json";
 import ButtonChangeRoute from "~/components/ButtonMUI";
 import MenuPriceList from "~/components/MenuPriceList";
+import ImageList from "~/components/ImageListMUI";
 
 export const loader = async () => {
   return [
@@ -23,7 +24,7 @@ export const loader = async () => {
     { title: "ՄԱՆՂԱԼ", source: Barbecue },
     { title: "ՆԱԽՈՒՏԵՍՏՆԵՐ", source: Starters },
     { title: "ԱՂՑԱՆՆԵՐ", source: Salads },
-    { title: "ԱԼԿՈՀՈԼԱՅԻՆ ԸՄՊԵԼԻՔՆԵՐ", source: AlcoholicDrinks },
+    // { title: "ԱԼԿՈՀՈԼԱՅԻՆ ԸՄՊԵԼԻՔՆԵՐ", source: AlcoholicDrinks },
   ];
 };
 
@@ -41,34 +42,39 @@ export const loader = async () => {
 
 export default function RestaurantMenuPrices() {
   const menuPrices = useLoaderData();
-  const arrIsdisabled = menuPrices.map(() => false);
-
-  // console.log(arrIsdisabled);
-
   const [visible, setVisible] = useState(true);
   const [menu, setMenu] = useState(menuPrices);
-  const [isDisabled, setIsdisabled] = useState(arrIsdisabled);
+  const [isDisabled, setIsdisabled] = useState(menuPrices.map(() => false));
 
   function handleMenu(e) {
     setVisible(false);
     setTimeout(() => {
       setMenu(menuPrices.filter((item) => item.title === e.target.value));
+    }, 200);
+    setTimeout(() => {
       setVisible(true);
     }, 500);
     setIsdisabled(
       menuPrices.map((element) => element.title === e.target.value)
     );
   }
-  console.log(typeof isDisabled[0]);
+
   return (
     <>
+      {/* <ImageList itemData={menu}/> */}
       <Link to="/prices/id">
         <ButtonChangeRoute value="Անցնել Օդալեն Կենտրոնի ճաշացանկ" />
       </Link>
-      <div className="flex flex-col">
+      <div className="flex flex-row w-full flex-wrap justify-center sticky top-2 z-50">
         {menuPrices.map((item, index) => {
           return (
             <input
+              style={{ backgroundColor: "white" }}
+              className={`border m-2 p-2 rounded-xl drop-shadow duration-75 font-medium ${
+                isDisabled[index]
+                  ? "bg-slate-400 text-orange-600 translate-y-1"
+                  : "bg-indigo-600 shadow-3xl"
+              }`}
               type="button"
               onClick={handleMenu}
               value={item.title}
@@ -82,9 +88,9 @@ export default function RestaurantMenuPrices() {
       {menu.map((item, index) => {
         return (
           <>
-            <div>{item.title}</div>
-            <MenuPriceList
-              children={item.source}
+            <ImageList
+              itemData={item.source}
+              title={item.title}
               visible={visible}
               key={index}
             />
