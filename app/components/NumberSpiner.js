@@ -9,7 +9,7 @@ export function NumAnim({ translateY, duration }) {
   ];
 
   return (
-    <div className="overflow-hidden h-9 w-6 my-4 border">
+    <div className="overflow-hidden h-8 w-6 my-4 border">
       <div
         className="flex flex-col ease-[cubic-bezier(.04,.1,0,1.05)] items-center"
         style={{
@@ -19,7 +19,7 @@ export function NumAnim({ translateY, duration }) {
       >
         {numArr.map((item, index) => {
           return (
-            <div key={index} className="h-9 text-2xl">
+            <div key={index} className="h-8 text-lg">
               {item}
             </div>
           );
@@ -31,9 +31,9 @@ export function NumAnim({ translateY, duration }) {
 
 export default function GrowingNumbers({ num }) {
   const [isCounting, setIsCounting] = useState(false);
-  const targetRef = useRef(null);
   const stopIndex = 70;
   const ArrOfNUm = num.toString().split("");
+  const targetRef = useRef(null);
 
   const callbackFunction = (entries) => {
     const [entry] = entries; // const entry = entries[0];
