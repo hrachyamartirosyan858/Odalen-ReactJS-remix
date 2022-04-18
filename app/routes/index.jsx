@@ -36,8 +36,8 @@ export default function Index() {
       <main className="flex flex-col items-center">
         <Carousel carouselData={data} />
         <AboutUs />
-        <div className="mt-4">
-          <div className="mb-6">
+        <div className="mt-4 flex flex-col md:flex-row">
+          <div className="mb-6 md:mr-10">
             <CardDavtashen />
           </div>
           <div className="mb-6">

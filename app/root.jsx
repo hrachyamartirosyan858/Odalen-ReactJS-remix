@@ -119,7 +119,14 @@ function Document({ children, title }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body
+        style={{
+          backgroundImage: `url("bg_image_6.jpg")`,
+          backgroundAttachment: "fixed",
+          // backgroundPosition: "center",
+          backgroundSize: "cover",
+        }}
+      >
         {children}
         <ScrollRestoration />
         <Scripts />

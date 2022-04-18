@@ -38,9 +38,9 @@ export default function Carousel({ carouselData }) {
           width: `${imagesCount * 100}%`,
         }}
       >
-        {carousel.map((item) => {
+        {carousel.map((item, index) => {
           return (
-            <div className="images-container">
+            <div key={index} className="images-container">
               <img
                 onMouseOver={() => {
                   setMouseOn(false);

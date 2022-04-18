@@ -29,7 +29,7 @@ export default function Navbar() {
     },
     {
       text: "Ճաշացանկ",
-      href: "/prices",
+      href: "/forRender",
       current: false,
     },
     {
