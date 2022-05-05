@@ -120,12 +120,12 @@ function Document({ children, title }) {
         <Links />
       </head>
       <body
-        style={{
-          backgroundImage: `url("bg_image_6.jpg")`,
-          backgroundAttachment: "fixed",
-          // backgroundPosition: "center",
-          backgroundSize: "cover",
-        }}
+      // style={{
+      //   backgroundImage: `url("bg_image_6.jpg")`,
+      //   backgroundAttachment: "fixed",
+      //   // backgroundPosition: "center",
+      //   backgroundSize: "cover",
+      // }}
       >
         {children}
         <ScrollRestoration />

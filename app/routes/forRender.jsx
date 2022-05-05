@@ -17,6 +17,7 @@ import AlcoholicDrinks from "~/data/MenuAlcoholicDrinks.json";
 import ButtonChangeRoute from "~/components/ButtonMUI";
 import MenuPriceList from "~/components/MenuPriceList";
 import ImageList from "~/components/ImageListMUI";
+import ImagesList from "~/components/ImageListMUI_2";
 
 export const loader = async () => {
   return [
@@ -42,6 +43,7 @@ export const loader = async () => {
 
 export default function RestaurantMenuPrices() {
   const menuPrices = useLoaderData();
+  // const [isCommentShown, setIsCommentShown] = useState(false);
   const [visible, setVisible] = useState(true);
   const [menu, setMenu] = useState(menuPrices);
   const [selectedMenuIndex, setSelectedMenuIndex] = useState(-1);
@@ -56,7 +58,7 @@ export default function RestaurantMenuPrices() {
   const options = {
     root: null,
     rootMargin: "0px",
-    threshold: 0.5,
+    threshold: 0.8,
   };
 
   useEffect(() => {
@@ -82,11 +84,6 @@ export default function RestaurantMenuPrices() {
 
   return (
     <>
-      <div className="">
-        <Link to="/prices/id">
-          <ButtonChangeRoute value="Անցնել Օդալեն Կենտրոնի ճաշացանկ" />
-        </Link>
-      </div>
       <div
         className="flex flex-row w-full flex-wrap justify-center top-2 z-50"
         ref={targetRef}
@@ -109,19 +106,34 @@ export default function RestaurantMenuPrices() {
           );
         })}
       </div>
-      <div
-        className={`flex flex-row justify-end sticky top-0 z-50 ${
-          isButtonVisible && "invisible"
-        }`}
-      >
-        <button
-          className="border z-50"
-          onClick={() =>
-            window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
-          }
+      <div className="flex flex-row mr-2 w-12 justify-end sticky top-36 left-[120%] z-50">
+        {/* <div
+          className={`h-12 duration-500 text-sm ${
+            isCommentShown ? "scale-x-[3.7]" : "scale-x-0 delay-1000"
+          }`}
         >
-          UP
-        </button>
+          Օդալեն Կենտրոնի ճաշացանկ
+        </div> */}
+        <div className="flex flex-col">
+          <Link
+            className="h-12"
+            // onMouseEnter={() => setIsCommentShown(true)}
+            // onMouseLeave={() => setIsCommentShown(false)}
+            to="/prices/id"
+          >
+            <img className="h-12" src="Odalen_Beer-ENG-Logo.png" />
+          </Link>
+          <button
+            className={`border z-50 duration-500 h-12 w-12 rounded-full mt-2 bg-slate-200 ${
+              isButtonVisible ? "translate-x-[120%]" : "translate-x-0"
+            }`}
+            onClick={() =>
+              window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+            }
+          >
+            UP
+          </button>
+        </div>
       </div>
       {menu.map((item, index) => {
         return (
