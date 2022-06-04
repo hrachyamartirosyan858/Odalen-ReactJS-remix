@@ -10,7 +10,7 @@ import {
 } from "remix";
 
 import tailwindUrl from "./styles/tailwind.css";
-// import TopMenu from "./components/TopMenu";
+import TopMenu from "./components/TopMenu";
 import stylesUrl from "./styles/styles.css";
 // import ImagesQuerySecond from "./components/ImagesQuery";
 // import Carousel from "./components/Carousel";
@@ -140,12 +140,11 @@ function Layout({ children }) {
   return (
     <div className="remix-app">
       <header className="remix-app__header z-50">
-        <div className="container remix-app__header-content">
-          <TopBar bgColor="bg-[#612E01]" iconsColor="white" />
-
+        <div className="remix-app__header-content font-['Noto_Sans_Armenian']">
           <nav aria-label="Main navigation" className="remix-app__header-nav">
-            {/* <TopMenu /> */}
             <Navbar />
+            {/* <TopMenu /> */}
+            <TopBar bgColor="bg-[#612E01]" iconsColor="white" />
             {/* <NavList /> */}
             {/* <ul>
               <li>
@@ -162,7 +161,7 @@ function Layout({ children }) {
         </div>
       </header>
       <div className="remix-app__main -z-50">
-        <div className="container remix-app__main-content">{children}</div>
+        <div className="remix-app__main-content">{children}</div>
       </div>
       <footer className="remix-app__footer">
         <BottomBar bgColor="bg-white" iconsColor="black" />

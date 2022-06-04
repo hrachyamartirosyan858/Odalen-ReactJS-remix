@@ -1,14 +1,18 @@
 [
   {
-    "url": "images/ardzan-1.jpg",
-    "name": "ardzan-1"
+    "url": "images/barbique_1.jpg",
+    "name": "barbeque"
   },
   {
-    "url": "images/ardzan-2.jpg",
-    "name": "ardzan-2"
+    "url": "images/barbique_2.jpg",
+    "name": "barbeque"
   },
   {
-    "url": "images/srah-1.jpg",
+    "url": "images/kebab-with-tomato-onion-ayran.jpg",
+    "name": "kebab"
+  },
+  {
+    "url": "images/top-view-adana-kebab-with-knife-fried-vegetables-chopped-onion-ayran-white-plate.jpg",
     "name": "srah-1"
   },
 

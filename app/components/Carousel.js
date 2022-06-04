@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useLoaderData } from "remix";
+import { useLoaderData, Link } from "remix";
 import { imagesData } from "../data";
 
 export default function Carousel({ carouselData }) {
@@ -30,7 +30,7 @@ export default function Carousel({ carouselData }) {
   }, [imagesIndex, translateX, mouseOn]);
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden relative">
       <div
         className="h-1/3 flex flex-row overflow-hidden duration-1000 ease-in-out"
         style={{
@@ -40,8 +40,15 @@ export default function Carousel({ carouselData }) {
       >
         {carousel.map((item, index) => {
           return (
-            <div key={index} className="images-container">
+            <div
+              key={index}
+              className=""
+              style={{ width: "100%", height: "50vh" }}
+            >
               <img
+                // width={imagesCount * 100}
+                // height={600}
+                style={{ objectFit: "cover", height: "100%", width: "100vw" }}
                 onMouseOver={() => {
                   setMouseOn(false);
                 }}
@@ -54,7 +61,10 @@ export default function Carousel({ carouselData }) {
           );
         })}
       </div>
-      <div className="flex flex-row justify-center">
+      <div className="absolute z-50 bottom-10 text-[#F2ECE9] m-[18px] px-5 py-3 rounded-[20px] bg-[#5E5946B2] text-2xl font-medium">
+        <Link to="/">ՄԵՐ ԱԿՑԻԱՆԵՐԸ</Link>
+      </div>
+      <div className="flex flex-row justify-center absolute w-full bottom-5">
         {carousel.map((item, index) => {
           return (
             <div

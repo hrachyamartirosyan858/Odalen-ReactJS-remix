@@ -1,11 +1,11 @@
-import { topMenuData } from "../data";
+import topMenuData from "~/data/TopMenuData.json";
 import { Link } from "remix";
 
-export default function Header({ isChecked }) {
+export default function Header({ open }) {
   return (
     <nav
-      className={`mt-10 origin-top-left duration-200 mx-8 ${
-        !isChecked ? "scale-y-0" : "scale-y-100"
+      className={`duration-200 mx-8 z-20 absolute ${
+        !open ? "opacity-100 top-20" : "opacity-0 top-[-490px]"
       }`}
     >
       {topMenuData.map((data) => {

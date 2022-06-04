@@ -1,37 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SimpleDialogDemo from "~/components/DialogSimpleMUI";
 
-export default function TopBar({ bgColor, iconsColor }) {
+export default function TopBar() {
   return (
-    <div>
-      <div
-        className={`${bgColor} flex flex-row items-center justify-center space-x-4`}
-      >
-        <div style={{ color: `${iconsColor}` }}>Հետևեք մեզ</div>
-        <SimpleDialogDemo iconSrc="facebook-logo-white.svg" />
-        {/* <a href="https://www.facebook.com/odalen.restaurant">
-          <img src="facebook-logo-white.svg" width="18px" />
-        </a> */}
-        <a href="https://www.instagram.com/odale_restaurant">
-          <img src="instagram-logo-white.svg" width="20px" />
-          {/* <FontAwesomeIcon
-            icon={["fab", "instagram"]}
-            size="1x"
-            color={iconsColor}
-          /> */}
-        </a>
-        <a className="pl-1" href="https://g.page/odalenarmenia?share">
-          <img src="tripadvisor-logo-white.svg" width="20px" />
-        </a>
-      </div>
-      <div
-        className={`${bgColor} flex flex-row items-center justify-center space-x-4`}
-      >
-        <div style={{ color: `${iconsColor}` }}>
-          Ամրագրում <a href="tel: +37433270777">033 27-07-77</a>,{" "}
-          <a href="tel: +374370777">010 37-07-77</a>
-        </div>
-      </div>
+    <div className="bg-[#E4DAC2] text-[#261D18] flex flex-row items-center justify-center text-[14px] h-7">
+      Ամրագրում<span>&nbsp;</span>
+      <a href="tel: +37433270777">033 27-07-77</a>;<span>&nbsp;</span>
+      <a href="tel: +37410370777">010 37-07-77</a>
     </div>
   );
 }

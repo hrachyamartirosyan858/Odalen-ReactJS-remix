@@ -15,7 +15,7 @@ import InterestingInfo from "~/components/InterestingInfo";
 // to the component that renders it.
 // https://remix.run/api/conventions#loader
 export let loader = () => {
-  return [imgData[0], imgData[1], imgData[2], imgData[3]];
+  return [imgData[0], imgData[1], imgData[2]];
   //return [imgData.slice(0,4)]
 };
 
@@ -35,7 +35,7 @@ export default function Index() {
     <div className="remix__page">
       <main className="flex flex-col items-center">
         <Carousel carouselData={data} />
-        <AboutUs />
+        {/* <AboutUs />
         <div className="mt-4 flex flex-col md:flex-row">
           <div className="mb-6 md:mr-10">
             <CardDavtashen />
@@ -45,7 +45,7 @@ export default function Index() {
           </div>
         </div>
         <InterestingInfo />
-        <GoogleMap />
+        <GoogleMap /> */}
       </main>
       {/* <aside>
         <h2>Demos In This App</h2>
