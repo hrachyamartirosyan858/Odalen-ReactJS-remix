@@ -30,9 +30,9 @@ export default function Carousel({ carouselData }) {
   }, [imagesIndex, translateX, mouseOn]);
 
   return (
-    <div className="overflow-hidden relative">
+    <div className="overflow-hidden relative h-[58%] w-[100%] md:h-[70%]">
       <div
-        className="h-1/3 flex flex-row overflow-hidden duration-1000 ease-in-out"
+        className="h-full flex flex-row overflow-hidden duration-1000 ease-in-out"
         style={{
           transform: `translateX(-${translateX}%)`,
           width: `${imagesCount * 100}%`,
@@ -43,7 +43,7 @@ export default function Carousel({ carouselData }) {
             <div
               key={index}
               className=""
-              style={{ width: "100%", height: "50vh" }}
+              // style={{ width: "100%", height: "100%" }}
             >
               <img
                 // width={imagesCount * 100}
@@ -61,7 +61,7 @@ export default function Carousel({ carouselData }) {
           );
         })}
       </div>
-      <div className="absolute z-50 bottom-10 text-[#F2ECE9] m-[18px] px-5 py-3 rounded-[20px] bg-[#5E5946B2] text-2xl font-medium">
+      <div className="absolute z-40 bottom-10 text-[#F2ECE9] m-[18px] px-5 py-3 rounded-[20px] bg-[#5E5946B2] text-2xl font-medium">
         <Link to="/">ՄԵՐ ԱԿՑԻԱՆԵՐԸ</Link>
       </div>
       <div className="flex flex-row justify-center absolute w-full bottom-5">
@@ -72,8 +72,8 @@ export default function Carousel({ carouselData }) {
                 setTranslateX((index * 100) / imagesCount);
                 setImagesIndex(index);
               }}
-              className={`pointer rounded-full mx-0.5 mt-0.5 ${
-                index === imagesIndex && "selected"
+              className={`rounded-full mx-0.5 mt-0.5 w-3.5 h-3.5 duration-1000 bg-[#FFFFFF] ${
+                index === imagesIndex && "opacity-70 scale-125"
               }`}
             ></div>
           );

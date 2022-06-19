@@ -9,6 +9,8 @@ import CardDavtashen from "~/components/CardRestaurant";
 import CardCenter from "~/components/CardCenter";
 import NumberSpiner from "~/components/NumberSpiner";
 import InterestingInfo from "~/components/InterestingInfo";
+import BottomBar from "~/components/BottomBar";
+import TopBar from "~/components/TopBar";
 
 // Loaders provide data to components and are only ever called on the server, so
 // you can connect to a database or run any server side code you want right next
@@ -32,9 +34,11 @@ export default function Index() {
   let data = useLoaderData();
 
   return (
-    <div className="remix__page">
-      <main className="flex flex-col items-center">
+    <div className="remix__page h-full">
+      <main className="flex flex-col items-center h-full">
+        <TopBar />
         <Carousel carouselData={data} />
+        <BottomBar />
         {/* <AboutUs />
         <div className="mt-4 flex flex-col md:flex-row">
           <div className="mb-6 md:mr-10">

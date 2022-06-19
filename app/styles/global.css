@@ -152,7 +152,6 @@ input:where([type="search"]) {
   /* padding-bottom: 1rem; */
   /* border-top: 1px solid var(--color-border); */
   height: 39vh;
-
 }
 
 .remix-app__footer-content {

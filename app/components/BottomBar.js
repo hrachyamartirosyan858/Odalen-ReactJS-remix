@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SimpleDialogDemo from "~/components/DialogSimpleMUI";
 
-export default function TopBar({ bgColor, iconsColor }) {
+export default function TopBar() {
   return (
-    <div className="bg-[#D0C9C0] p-[18px] flex flex-col justify-between h-full">
+    <div className="bg-[#D0C9C0] p-[18px] flex flex-col justify-between h-[38%] w-full md:h-[25%] md:grid md:grid-rows-2 grid-flow-col">
       <div>
         <img className="" src="Group_25.svg" />
       </div>
@@ -15,9 +15,9 @@ export default function TopBar({ bgColor, iconsColor }) {
         <div>Էլ փոստ՝</div>
       </div>
       <div className="flex flex-row">
-        <img src="Facebook_F.svg" />
-        <img src="Instagram.svg" />
-        <img src="TripAdvisor.svg" />
+        <img className="pr-7" src="Facebook_F.svg" />
+        <img className="pr-7" src="Instagram.svg" />
+        <img className="pr-7" src="TripAdvisor.svg" />
         <img src="Place Marker.svg" />
       </div>
       <div className="flex flex-col text-xs">

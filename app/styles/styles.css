@@ -1,3 +1,15 @@
+.remix-app__header {
+  height: 8.4vh;
+}
+
+.remix-app__main {
+  height: 91.6vh;
+}
+
+/* .remix-app__footer {
+  height: 35vh;
+} */
+
 .menu-btn {
   position: relative;
   display: flex;
@@ -109,3 +121,13 @@
   outline-color:#1372D1;
 }
 
+@media (min-width: 768px) { 
+  .remix-app__header {
+    height: 6vh;
+  }
+  
+  .remix-app__main {
+    height: 94vh;
+  }
+  
+}

@@ -18,7 +18,12 @@ export default function Navbar() {
       current: true,
     },
     {
-      text: "Մենյու",
+      text: "Ամրագրել",
+      href: "/reserve",
+      current: false,
+    },
+    {
+      text: "Ճաշացանկ",
       href: "/forRender",
       current: false,
     },
@@ -28,13 +33,8 @@ export default function Navbar() {
       current: false,
     },
     {
-      text: "Ամրագրել",
-      href: "/reserve",
-      current: false,
-    },
-    {
       text: "Ակցիաներ",
-      href: "/estimateC",
+      href: "/promo",
       current: false,
     },
     {
@@ -45,11 +45,11 @@ export default function Navbar() {
   ]);
 
   return (
-    <Disclosure as="nav" className="bg-[#FFFBE9] border-t">
+    <Disclosure as="nav" className="bg-[#FFFBE9] h-full">
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto px-2 h-16 sm:px-6 lg:px-8">
-            <div className="relative flex items-center justify-between h-16">
+          <div className="max-w-7xl mx-auto px-2 h-full sm:px-6 lg:px-8">
+            <div className="relative flex items-center justify-between h-full">
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-end">
                 <div className="flex-shrink-0 flex items-center">
                   {/* <img
@@ -97,7 +97,7 @@ export default function Navbar() {
                         className={({ isActive }) =>
                           `${
                             isActive
-                              ? "bg-gray-900 text-white"
+                              ? "bg-[#5E5946B2] text-white"
                               : "text-[#42332B] hover:bg-gray-700 hover:text-white"
                           } font-normal px-2 py-2 rounded-md text-sm`
                         }
@@ -112,7 +112,7 @@ export default function Navbar() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center justify-center w-14 sm:static sm:inset-auto sm:ml-6 sm:pr-0 md:hidden">
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none ">
                   {open ? (
                     <XIcon
                       className="block h-[46px] w-[34px] text-black"
@@ -129,7 +129,7 @@ export default function Navbar() {
             </div>
           </div>
           <div className="relative">
-            <Disclosure.Panel className="md:hidden absolute z-50 bg-[#FFFBE9] right-0 w-full sm:w-2/3">
+            <Disclosure.Panel className="md:hidden absolute z-50 bg-[#FFFBE9] right-0 w-full h-[56.8vh] pt-[4.5vh]">
               {/* <--- */}
               <Transition
                 as={Fragment}
@@ -142,7 +142,7 @@ export default function Navbar() {
               >
                 <div className="px-2 pt-2 pb-3 space-y-1 flex flex-col items-center">
                   {navigation.map((item, index) => (
-                    <div className="w-5/12">
+                    <div className="w-fit">
                       <NavLink
                         key={index}
                         as="a"
@@ -150,15 +150,15 @@ export default function Navbar() {
                         className={({ isActive }) =>
                           `${
                             isActive
-                              ? "bg-gray-900 text-white"
+                              ? "bg-[#5E5946B2] text-white"
                               : "text-[#42332B] hover:bg-gray-700 hover:text-white"
-                          } font-normal block px-3 py-2 rounded-md`
+                          } font-normal block px-3 py-2 rounded-md text-center`
                         }
                         aria-current={({ isActive }) =>
                           isActive ? "page" : undefined
                         }
                       >
-                        <Disclosure.Button className="text-base font-medium">
+                        <Disclosure.Button className="text-2xl font-semibold">
                           {item.text}
                         </Disclosure.Button>
                       </NavLink>

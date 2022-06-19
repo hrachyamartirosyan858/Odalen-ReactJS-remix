@@ -120,12 +120,13 @@ function Document({ children, title }) {
         <Links />
       </head>
       <body
-      // style={{
-      //   backgroundImage: `url("bg_image_6.jpg")`,
-      //   backgroundAttachment: "fixed",
-      //   // backgroundPosition: "center",
-      //   backgroundSize: "cover",
-      // }}
+        className="font-['Noto_Sans_Armenian']"
+        // style={{
+        //   backgroundImage: `url("bg_image_6.jpg")`,
+        //   backgroundAttachment: "fixed",
+        //   // backgroundPosition: "center",
+        //   backgroundSize: "cover",
+        // }}
       >
         {children}
         <ScrollRestoration />
@@ -140,35 +141,24 @@ function Layout({ children }) {
   return (
     <div className="remix-app">
       <header className="remix-app__header z-50">
-        <div className="remix-app__header-content font-['Noto_Sans_Armenian']">
-          <nav aria-label="Main navigation" className="remix-app__header-nav">
-            <Navbar />
-            {/* <TopMenu /> */}
-            <TopBar bgColor="bg-[#612E01]" iconsColor="white" />
-            {/* <NavList /> */}
-            {/* <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <a href="https://remix.run/docs">Remix Docs</a>
-              </li>
-              <li>
-                <a href="https://github.com/remix-run/remix">GitHub</a>
-              </li>
-            </ul> */}
-          </nav>
-        </div>
+        <nav
+          aria-label="Main navigation"
+          className="remix-app__header-nav h-full"
+        >
+          <Navbar />
+          {/* <TopMenu /> */}
+          {/* <NavList /> */}
+        </nav>
       </header>
       <div className="remix-app__main -z-50">
-        <div className="remix-app__main-content">{children}</div>
+        <div className="remix-app__main-content h-full">{children}</div>
       </div>
-      <footer className="remix-app__footer">
-        <BottomBar bgColor="bg-white" iconsColor="black" />
+      {/* <footer className="remix-app__footer">
+        <BottomBar />
         <div className="container remix-app__footer-content">
-          {/* <p>&copy; You!</p> */}
+          <p>&copy; You!</p>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 }
