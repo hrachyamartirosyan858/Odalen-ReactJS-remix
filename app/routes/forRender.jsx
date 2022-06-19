@@ -18,6 +18,7 @@ import ButtonChangeRoute from "~/components/ButtonMUI";
 import MenuPriceList from "~/components/MenuPriceList";
 import ImageList from "~/components/ImageListMUI";
 import ImagesList from "~/components/ImageListMUI_2";
+import imgData from "~/data/ImagesData.json";
 
 export const loader = async () => {
   return [
